@@ -10,21 +10,30 @@ const titleInput = $('#titleInput');
 const categoriesSelect = $('#categoriesSelect');
 const taskList = $('#taskList');
 const clearListBtn = $('#clearListBtn');
+const params = new URLSearchParams(window.location.search);
+const filteredCategory = params.get("category");
+let currentFilter = filteredCategory || null; 
 
 /* functions */
 
 function renderList() {
     taskList.innerHTML = '';
 
-    if (tasks.length === 0) {
-        const emptyLi = document.createElement('li');
-        emptyLi.classList.add('empty-list');
-        emptyLi.textContent = '¡todas tus tareas están completadas!';
-        taskList.appendChild(emptyLi);
+    let filteredTasks = tasks;
+
+    if (currentFilter) {
+        filteredTasks = tasks.filter(task => task.category === currentFilter);
+    }
+
+    if (filteredTasks.length === 0) {
+        const emptyList = document.createElement('li');
+        emptyList.classList.add('empty-list');
+        emptyList.textContent = '¡todas tus tareas están completadas!';
+        taskList.appendChild(emptyList);
         return;
     }
 
-    tasks.forEach(task => {
+    filteredTasks.forEach(task => {
         const li = document.createElement('li');
         li.classList.add('row');
         li.classList.add('list-item')
@@ -101,3 +110,23 @@ clearListBtn.addEventListener('click', () => {
     localStorage.removeItem('tasks');
     renderList();
 })
+
+document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const category = btn.dataset.category;
+        
+        if (currentFilter === category) {
+            currentFilter = null;
+            const url = new URL(window.location);
+            url.searchParams.delete('category');
+            window.history.replaceState(null, '', url);
+        } else {
+            currentFilter = category;
+            const url = new URL(window.location);
+            url.searchParams.set('category', category);
+            window.history.replaceState(null, '', url);
+        }
+
+        renderList(); 
+})
+});
