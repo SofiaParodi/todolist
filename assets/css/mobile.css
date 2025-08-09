@@ -39,6 +39,11 @@
      position: relative; 
 }
 
+.empty-list {
+    text-align: center;
+    margin-top: 1rem;
+}
+
 .list-item::before {
     content: "";
     position: absolute;

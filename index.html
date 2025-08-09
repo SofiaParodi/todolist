@@ -29,14 +29,10 @@
             <button class="category">🏠 Personal</button>
         </div>
 
-        <ul>
-            <li class="row list-item">
-                <h3 class="title">💼 título</h3>
-                <input type="checkbox">
-            </li>
+        <ul id="taskList">
         </ul>
 
-        <button class="delete-btn">limpiar lista</button>
+        <button class="delete-btn" id="clearListBtn">limpiar lista</button>
 
     </section>
 
@@ -47,21 +43,21 @@
         <form class="form">
             <label class="form-field">
                 título
-                <input type="text" class="form-input">
+                <input type="text" class="form-input" id="titleInput">
             </label>
 
             <label class="form-field"> 
                 categoría
-                <select class="form-select">
-                    <option>💼 Trabajo</option>
-                    <option>📚 Estudio</option>
-                    <option>🏠 Personal</option>
+                <select class="form-select" id="categoriesSelect">
+                    <option value="work">💼 Trabajo</option>
+                    <option value="study">📚 Estudio</option>
+                    <option value="personal">🏠 Personal</option>
                 </select>
             </label>
 
             <div class="form-btns">
             <button type="button" class="cancelBtn" id="cancelBtn">Cancelar</button>
-            <button type="submit" class="submitBtn">Enviar</button>
+            <button type="submit" class="submitBtn" id="submitBtn">Enviar</button>
             </div>
         </form>
     </section>
