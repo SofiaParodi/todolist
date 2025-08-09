@@ -14,9 +14,9 @@ const params = new URLSearchParams(window.location.search);
 const filteredCategory = params.get("category");
 let currentFilter = filteredCategory || null; 
 const categoryColors = {
-  work: '#f3edbd',     // ejemplo: morado para trabajo
-  study: '#bbb7e5',    // azul para estudio
-  personal: '#dae9fa', // naranja para personal
+  work: '#f3edbd',
+  study: '#bbb7e5',
+  personal: '#dae9fa',
 };
 
 /* functions */

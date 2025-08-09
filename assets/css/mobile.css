@@ -13,7 +13,7 @@
 .add-btn {
     border-radius: 5px;
     padding: 3% 7%;
-    background-color: #9ef39f;
+    background-color: #bac5a5;
 }
 
 /* categories */
@@ -50,7 +50,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 6px; /* ancho de la barra */
+    width: 6px;
     height: 100%;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -81,7 +81,7 @@
     padding: 4% 10%;
     margin: 1rem auto;
     border-radius: 5px;
-    background-color: #ffb9b9;
+    background-color: #e18d8e;
 }
 
 
@@ -121,6 +121,10 @@
 .cancelBtn, .submitBtn {
     border-radius: 5px;
     padding: 3% 7%;
+}
+
+.submitBtn {
+    background-color: #bac5a5;
 }
 
 input:focus, select:focus {
