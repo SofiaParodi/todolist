@@ -13,6 +13,7 @@
 .add-btn {
     border-radius: 5px;
     padding: 3% 7%;
+    background-color: #9ef39f;
 }
 
 /* categories */
@@ -51,10 +52,22 @@
     left: 0;
     width: 6px; /* ancho de la barra */
     height: 100%;
-    background-color: #bbb7e5;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
+.list-item.work::before {
+    background-color: #f3edbd;
+}
+
+.list-item.study::before {
+    background-color: #bbb7e5;
+}
+
+.list-item.personal::before {
+    background-color: #dae9fa;
+}
+
 
 .completed {
   text-decoration: line-through;
@@ -68,6 +81,7 @@
     padding: 4% 10%;
     margin: 1rem auto;
     border-radius: 5px;
+    background-color: #ffb9b9;
 }
 
 

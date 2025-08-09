@@ -13,6 +13,11 @@ const clearListBtn = $('#clearListBtn');
 const params = new URLSearchParams(window.location.search);
 const filteredCategory = params.get("category");
 let currentFilter = filteredCategory || null; 
+const categoryColors = {
+  work: '#f3edbd',     // ejemplo: morado para trabajo
+  study: '#bbb7e5',    // azul para estudio
+  personal: '#dae9fa', // naranja para personal
+};
 
 /* functions */
 
@@ -35,8 +40,7 @@ function renderList() {
 
     filteredTasks.forEach(task => {
         const li = document.createElement('li');
-        li.classList.add('row');
-        li.classList.add('list-item')
+        li.classList.add('row', task.category, 'list-item');
         li.innerHTML = `
             <h3 class="title">${getEmoji(task.category)} ${task.title}</h3>
                 <input type="checkbox">
@@ -108,6 +112,13 @@ submitBtn.addEventListener('click', (e) => {
 clearListBtn.addEventListener('click', () => {
     tasks.length = 0;
     localStorage.removeItem('tasks');
+
+    currentFilter = null; 
+    const url = new URL(window.location);
+    url.searchParams.delete('category');
+    window.history.replaceState(null, '', url);
+    
+    updateButtonStates();
     renderList();
 })
 
@@ -125,8 +136,20 @@ document.querySelectorAll('.category-btn').forEach(btn => {
             const url = new URL(window.location);
             url.searchParams.set('category', category);
             window.history.replaceState(null, '', url);
+            
         }
 
         renderList(); 
+        updateButtonStates()
 })
 });
+
+function updateButtonStates() {
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        if (btn.dataset.category === currentFilter) {
+            btn.style.backgroundColor = categoryColors[currentFilter];
+        } else {
+            btn.style.backgroundColor = '';
+        }
+    });
+}
