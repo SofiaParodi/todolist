@@ -1,0 +1,6 @@
+/* normalize */
+@import url(./normalize.css);
+
+/* media queries */
+@import url(./mobile.css);
+@import url(./desktop.css) screen and (min-width: 992px);
