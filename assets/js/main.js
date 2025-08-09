@@ -13,7 +13,7 @@ const clearListBtn = $('#clearListBtn');
 
 /* functions */
 
-function renderList () {
+function renderList() {
     taskList.innerHTML = '';
 
     if (tasks.length === 0) {
@@ -32,13 +32,25 @@ function renderList () {
             <h3 class="title">${getEmoji(task.category)} ${task.title}</h3>
                 <input type="checkbox">
         `
+
+        const checkbox = li.querySelector('input[type="checkbox"]');
+        const taskTitle = li.querySelector('.title');
+
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                taskTitle.classList.add('completed');
+            } else {
+                taskTitle.classList.remove('completed');
+            }
+        });
+
         taskList.appendChild(li);
     });
 }
 
-function getEmoji (category) {
+function getEmoji(category) {
     switch (category) {
-         case 'work':
+        case 'work':
             return '💼';
         case 'study':
             return '📚';
@@ -47,7 +59,7 @@ function getEmoji (category) {
     }
 }
 
-function $ (selector) {
+function $(selector) {
     return document.querySelector(selector);
 }
 

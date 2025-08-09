@@ -56,6 +56,11 @@
     border-bottom-left-radius: 5px;
 }
 
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
 
 /* delete btn */
 .delete-btn {
