@@ -63,6 +63,42 @@
 
 /* form */
 
+.form-title {
+    margin-top: 3%;
+}
+
 .hidden {
     display: none;
+}
+
+.form {
+    margin-top: 1rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3%
+}
+
+.form-input, .form-select {
+    margin-top: 1%;
+    padding: 3% 4%;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.form-btns {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancelBtn, .submitBtn {
+    border-radius: 5px;
+    padding: 3% 7%;
+}
+
+input:focus, select:focus {
+  outline: 1px solid var(--active-color);
 }

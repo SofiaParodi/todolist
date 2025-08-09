@@ -12,7 +12,7 @@
 
 <body>
     <!-- main -->
-    <section class="main" id="mainSection">
+    <section class="main hidden" id="mainSection">
         <div class="row">
             <h2 class="title">
                 to do list
@@ -41,26 +41,28 @@
     </section>
 
 
-    <section class="hidden" id="formSection">
-        <h2>crear tarea</h2>
+    <section id="formSection">
+        <h2 class="row form-title">crear tarea</h2>
 
-        <form>
-            <label>
+        <form class="form">
+            <label class="form-field">
                 título
-                <input type="text">
+                <input type="text" class="form-input">
             </label>
 
-            <label> 
+            <label class="form-field"> 
                 categoría
-                <select placeholder="seleccione una categoria">
-                    <option>Trabajo</option>
-                    <option>Estudio</option>
-                    <option>Personal</option>
+                <select class="form-select">
+                    <option>💼 Trabajo</option>
+                    <option>📚 Estudio</option>
+                    <option>🏠 Personal</option>
                 </select>
             </label>
 
-            <button>Cancelar</button>
-            <button type="submit">Enviar</button>
+            <div class="form-btns">
+            <button type="button" class="cancelBtn" id="cancelBtn">Cancelar</button>
+            <button type="submit" class="submitBtn">Enviar</button>
+            </div>
         </form>
     </section>
 
