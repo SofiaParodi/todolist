@@ -73,3 +73,14 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
+/* Lists without styles */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Buttons without borders */
+button {
+  border: none;
+}

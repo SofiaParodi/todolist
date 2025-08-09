@@ -1,6 +1,22 @@
 /* normalize */
 @import url(./normalize.css);
 
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* media queries */
 @import url(./mobile.css);
 @import url(./desktop.css) screen and (min-width: 992px);
+
+:root {
+    --main-color: #fafafc;
+    --border-color: #eaeaed;
+    --text-color: #3a3b44;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+  margin: 2% 3%;
+}

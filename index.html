@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,66 @@
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-    
 
+<body>
+    <!-- main -->
+    <section class="main" id="mainSection">
+        <div class="row">
+            <h2 class="title">
+                to do list
+            </h2>
+
+            <button class="add-btn" id="addBtn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+
+        <div class="filters">
+            <button class="category">💼 Trabajo</button>
+            <button class="category">📚 Estudio</button>
+            <button class="category">🏠 Personal</button>
+        </div>
+
+        <ul>
+            <li class="row list-item">
+                <h3 class="title">💼 título</h3>
+                <input type="checkbox">
+            </li>
+        </ul>
+
+        <button class="delete-btn">limpiar lista</button>
+
+    </section>
+
+
+    <section class="hidden" id="formSection">
+        <h2>crear tarea</h2>
+
+        <form>
+            <label>
+                título
+                <input type="text">
+            </label>
+
+            <label> 
+                categoría
+                <select placeholder="seleccione una categoria">
+                    <option>Trabajo</option>
+                    <option>Estudio</option>
+                    <option>Personal</option>
+                </select>
+            </label>
+
+            <button>Cancelar</button>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 
     <!-- js -->
     <script src="./assets/js/main.js"></script>
+
+    <!-- font awesome -->
+     <script src="https://kit.fontawesome.com/09619394e8.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
